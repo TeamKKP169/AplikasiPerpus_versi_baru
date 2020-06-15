@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="data_siswa" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e0e3fc6-1780-480b-8ade-8b21ae7675b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kls" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+     siswa.`nis` AS siswa_nis,
+     siswa.`nama` AS siswa_nama,
+     siswa.`alamat` AS siswa_alamat,
+     siswa.`no_hp` AS siswa_no_hp,
+     siswa.`jenis_kelamin` AS siswa_jenis_kelamin,
+     siswa.`kelas` AS siswa_kelas
+FROM
+     `siswa` siswa
+WHERE
+    siswa.`kelas` = $P{kls}]]>
+	</queryString>
+	<field name="siswa_nis" class="java.lang.String"/>
+	<field name="siswa_nama" class="java.lang.String"/>
+	<field name="siswa_alamat" class="java.lang.String"/>
+	<field name="siswa_no_hp" class="java.lang.String"/>
+	<field name="siswa_jenis_kelamin" class="java.lang.String"/>
+	<field name="siswa_kelas" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="10" width="310" height="20" uuid="0ff54737-5117-40bf-bd3a-724074f0a5e5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DATA ANGGOTA PERPUSTAKAAN SMK PERINTIS 1 DEPOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="50" width="354" height="20" uuid="a6e43712-1a96-4ac4-9e73-19f3e80b3e99"/>
+				<text><![CDATA[www.smkperintis1depok.sch.id    email :/smk1perdep39@yahoo.co.id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="30" width="417" height="20" uuid="6be5f675-3bf4-467e-905b-d8229d52355d"/>
+				<text><![CDATA[Jln.Siliwangi No 39.Telp/Fax(021) 7773543 Kec.Pancoran Mas-Kota Depok 16431]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="65" height="50" uuid="6afa4288-31b1-4173-86e1-6e887641f90b"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="497" y="0" width="55" height="20" uuid="a2286e9d-f63e-479b-b002-6eb9002ca194"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="0" width="92" height="20" uuid="6d85087b-9484-4b40-8e5b-7ff35329f4ab"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="313" y="0" width="92" height="20" uuid="e9e7acfb-2a6f-4ca5-a98d-7cc6e7c24b4c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="0" width="143" height="20" uuid="31e297ce-efce-4b8a-a007-e916557a207f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="78" y="0" width="92" height="20" uuid="d0578b58-dacc-46df-891e-a25fabc5bd13"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="78" height="20" uuid="d5a09348-e1d3-496e-89f1-0973019a5b26"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="78" height="20" uuid="773382b8-2a7b-4dc8-8568-9636e5f1346a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="0" width="92" height="20" uuid="0812e16e-c5b5-4ac7-a730-a4dad33eaa51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="0" width="143" height="20" uuid="1c448c9b-f073-4976-ab76-aed3314d7cc2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="0" width="92" height="20" uuid="1c9b2246-5a59-4eec-936f-32fcb8f22398"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HANDPHONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="92" height="20" uuid="434bb94c-eb8b-4d98-a1be-45adc92770f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KELAMIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="0" width="55" height="20" uuid="141cc3ef-2c80-4fd1-8046-ad80716ff777"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KELAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="78" height="20" uuid="fbcc89ac-d877-4843-bd26-010aa7297175"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="78" y="0" width="92" height="20" uuid="cbb6f66a-c0ed-446a-8fe6-be567ae8c745"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="170" y="0" width="143" height="20" uuid="9ccbeec8-7e09-485b-8032-e4ca60f2f969"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="313" y="0" width="92" height="20" uuid="b7a5633c-13e6-4360-86ec-cf1af7abfeda"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="0" width="92" height="20" uuid="513711be-2ec4-44bc-b492-7042e188a683"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="497" y="0" width="55" height="20" uuid="b3c40510-87d3-499d-944e-b5843186338f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="78" height="20" uuid="902db887-67ba-4bc8-b3f8-718cb325f40b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_nis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="92" height="20" uuid="ee0e581c-a965-4913-8b24-f01e1188b1f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="0" width="143" height="20" uuid="d0066c4c-ec11-46a0-8456-5dbe27606203"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="0" width="92" height="20" uuid="3008caf5-189d-4423-bc72-d27c89bf23d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="92" height="20" uuid="6ab1f598-09ed-4a1c-938f-0d937f96c458"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="55" height="20" uuid="d6449799-01c0-48ff-801a-5621673b9eae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siswa_kelas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="46" splitType="Stretch"/>
+	</summary>
+</jasperReport>

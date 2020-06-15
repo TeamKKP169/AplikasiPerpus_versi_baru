@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1bb26acb-a965-4972-9c73-b71471b4f651">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="databuku" uuid="3b991a0e-ab20-42d7-9557-82a5ce36a79d">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     buku.`id_buku` AS buku_id_buku,
+     buku.`judul` AS buku_judul,
+     buku.`pengarang` AS buku_pengarang,
+     buku.`penerbit` AS buku_penerbit,
+     buku.`kategori` AS buku_kategori,
+     buku.`isbn` AS buku_isbn,
+     buku.`stok` AS buku_stok
+FROM
+     `buku` buku]]>
+		</queryString>
+		<field name="buku_id_buku" class="java.lang.String"/>
+		<field name="buku_judul" class="java.lang.String"/>
+		<field name="buku_pengarang" class="java.lang.String"/>
+		<field name="buku_penerbit" class="java.lang.String"/>
+		<field name="buku_kategori" class="java.lang.String"/>
+		<field name="buku_isbn" class="java.lang.String"/>
+		<field name="buku_stok" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+     buku.`id_buku` AS buku_id_buku,
+     buku.`judul` AS buku_judul,
+     buku.`pengarang` AS buku_pengarang,
+     buku.`penerbit` AS buku_penerbit,
+     buku.`kategori` AS buku_kategori,
+     buku.`isbn` AS buku_isbn,
+     buku.`stok` AS buku_stok
+FROM
+     `buku` buku]]>
+	</queryString>
+	<field name="buku_id_buku" class="java.lang.String"/>
+	<field name="buku_judul" class="java.lang.String"/>
+	<field name="buku_pengarang" class="java.lang.String"/>
+	<field name="buku_penerbit" class="java.lang.String"/>
+	<field name="buku_kategori" class="java.lang.String"/>
+	<field name="buku_isbn" class="java.lang.String"/>
+	<field name="buku_stok" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="112" y="10" width="310" height="20" uuid="84303c12-a6ee-474d-a8c4-b1dd6b39cc25"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DATA BUKU PERPUSTAKAAN SMK PERINTIS 1 DEPOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="50" width="354" height="20" uuid="b69957f3-0386-457b-9e66-3a3398696f25"/>
+				<text><![CDATA[www.smkperintis1depok.sch.id    email :/smk1perdep39@yahoo.co.id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="30" width="417" height="20" uuid="7c59abd9-3799-4142-a489-4da2f8e55504"/>
+				<text><![CDATA[JLn.Siliwangi No 39.Telp/Fax(021) 7773543 Kec.Pancoran Mas-Kota Depok 16431]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="10" width="63" height="50" uuid="552fa5a8-b034-41cd-8327-44d249f2691e"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="49" height="20" uuid="5eb10370-21e3-47c7-a20b-cfaa72691374"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="508" y="0" width="47" height="20" uuid="d03f7483-ca22-4641-8d39-5bd644a8b491"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="49" y="0" width="185" height="20" uuid="232e5ad3-be79-40a2-ad29-a09c2eebd686"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="0" width="69" height="20" uuid="50828585-7a18-4ef9-b70b-b71c3bea1816"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="234" y="0" width="77" height="20" uuid="156cfc74-6278-4846-b178-9bcda02cc9e8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="449" y="0" width="59" height="20" uuid="79cd337e-1ebc-4e5a-aa09-da9934170ccc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="0" width="69" height="20" uuid="e6c669ce-ae64-4254-84ee-094727409929"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="20" uuid="40d57c0f-b84d-4100-adfc-bc006a7c8620"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="0" width="185" height="20" uuid="357dae78-07b3-4097-b5b8-5012beb96a45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUDUL BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="79" height="20" uuid="d56eb352-ab71-4481-898c-1b0353690fec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENGARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="0" width="69" height="20" uuid="28afb9da-93cb-4d35-9c5e-2dc59fed7fc2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENERBIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="0" width="67" height="20" uuid="53a3b688-8c9b-4171-8c55-c419b9c5abd0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="0" width="59" height="20" uuid="84633cf8-3c0c-4ad7-97c9-50607d5afc86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="508" y="0" width="47" height="20" uuid="aceb99cd-31a5-4336-b6c0-b80f7fc91b00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="449" y="0" width="59" height="20" uuid="da991086-5386-4cc1-a82d-55eae41abba6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="49" y="0" width="185" height="20" uuid="d7f60cf6-34f1-48a7-abd7-606e00c600ce"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="0" width="69" height="20" uuid="35c51772-62b3-45ca-a205-47f743edf3cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="508" y="0" width="47" height="20" uuid="5d54d70b-87cf-493f-924e-6dae882cd232"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="49" height="20" uuid="19b3e610-d1a2-4922-8be5-809f758f33ef"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="234" y="0" width="77" height="20" uuid="bebb61fb-621b-452a-a24a-3fe7fd5ffe90"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="0" width="69" height="20" uuid="d096ca0b-a099-48bd-ba75-ad0ba3d9b55a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="49" height="20" uuid="a88a6d95-e0ce-4e50-87d0-bbb8340385b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="0" width="188" height="20" uuid="ef1253ba-3b14-4f27-a38c-e8836f71cdb9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="76" height="20" uuid="49416cca-e7ea-4228-b8f9-5d4895174e64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="0" width="69" height="20" uuid="0a6bf602-e45a-4233-acb7-525272b47cd7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_penerbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="67" height="20" uuid="82273eaf-de23-4776-8134-142c2c3ed30a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_kategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="59" height="20" uuid="226a2d16-e034-4d36-8b70-c154fe67df24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_isbn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="508" y="0" width="47" height="20" uuid="6faab436-bc3f-476d-82b5-37ee0d10fc3c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{buku_stok}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="237" y="30" width="46" height="20" uuid="98321be1-6410-441e-b34d-cb1d1d2b76ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="449" y="30" width="100" height="20" uuid="919d5cd7-1c3c-41ff-9858-a300612f2ed7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

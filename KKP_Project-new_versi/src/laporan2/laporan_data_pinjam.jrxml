@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="432" pageHeight="842" columnWidth="432" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="105c246d-69c8-413c-8fee-5e63c18d68e2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#FFEFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<subDataset name="pinjam" uuid="f55a9d46-5951-428d-9a58-f166ed07202a">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     pinjaman.`nama` AS pinjaman_nama,
+     pinjaman.`judul` AS pinjaman_judul,
+     pinjaman.`jumlah` AS pinjaman_jumlah,
+     pinjaman.`tgl_pinjam` AS pinjaman_tgl_pinjam,
+     pinjaman.`tgl_balik` AS pinjaman_tgl_balik
+FROM
+     `pinjaman` pinjaman]]>
+		</queryString>
+		<field name="pinjaman_nama" class="java.lang.String"/>
+		<field name="pinjaman_judul" class="java.lang.String"/>
+		<field name="pinjaman_tgl_pinjam" class="java.lang.String"/>
+		<field name="pinjaman_tgl_balik" class="java.lang.String"/>
+		<field name="pinjaman_jumlah" class="java.lang.Integer"/>
+		<group name="pinjaman_nama">
+			<groupExpression><![CDATA[$F{pinjaman_nama}]]></groupExpression>
+		</group>
+		<group name="pinjaman_judul">
+			<groupExpression><![CDATA[$F{pinjaman_judul}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="npm" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+     pinjaman.`nama` AS pinjaman_nama,
+     pinjaman.`judul` AS pinjaman_judul,
+     pinjaman.`jumlah` AS pinjaman_jumlah,
+     pinjaman.`tgl_pinjam` AS pinjaman_tgl_pinjam,
+     pinjaman.`tgl_balik` AS pinjaman_tgl_balik,
+     pinjaman.`npm` AS pinjaman_npm
+FROM
+     `pinjaman` pinjaman
+WHERE
+     pinjaman.`npm` = $P{npm}]]>
+	</queryString>
+	<field name="pinjaman_nama" class="java.lang.String"/>
+	<field name="pinjaman_judul" class="java.lang.String"/>
+	<field name="pinjaman_jumlah" class="java.lang.Integer"/>
+	<field name="pinjaman_tgl_pinjam" class="java.lang.String"/>
+	<field name="pinjaman_tgl_balik" class="java.lang.String"/>
+	<field name="pinjaman_npm" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="230" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="41" width="230" height="20" uuid="a687159d-a6c9-4ff0-b758-42a8f0c3a260"/>
+				<text><![CDATA[JLn.Siliwangi No 39.Telp/Fax(021) 7773543 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="21" width="230" height="20" uuid="d57f5ce4-6faa-42eb-aab7-f38ea7f89e9b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PERPUSTAKAAN SMK PERINTIS 1 DEPOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="81" width="354" height="20" uuid="60a9668b-0761-4bec-986a-ae517d8cf099"/>
+				<text><![CDATA[www.smkperintis1depok.sch.id    email :/smk1perdep39@yahoo.co.id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="61" width="199" height="20" uuid="cff79c38-f022-49a8-ab7e-5f63f1976b74"/>
+				<text><![CDATA[Kec.Pancoran Mas-Kota Depok 16431]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="200" width="53" height="20" uuid="8aa5d4e0-2aeb-421e-bdcd-4a8b4c7c55c3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA =]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="69" y="200" width="119" height="20" uuid="cdd25304-9640-4108-9481-a5b64580530d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pinjaman_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="180" width="53" height="20" uuid="3a37030e-d1dc-4c0e-9a04-480e94d38155"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIS     =]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="69" y="180" width="119" height="20" uuid="5fb50c0d-840c-4b16-9dfd-3ec990f6b095"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pinjaman_npm}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="16" y="11" width="75" height="50" uuid="3775bb7f-240b-4477-97f9-250f286c472e"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23">
+			<rectangle>
+				<reportElement x="16" y="2" width="172" height="20" uuid="73816eeb-ec01-4ce6-83ef-2cadfb828a20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="188" y="2" width="85" height="20" uuid="3178132a-2486-4f28-b783-da72ef066ddd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="273" y="2" width="96" height="20" uuid="8c329027-d80e-4a23-abac-89db83c00d87"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="369" y="2" width="51" height="20" uuid="61eb0984-74f5-47f9-9b5e-accae7327297"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="2" width="172" height="20" uuid="eb868a5e-2612-41b7-8b4d-9ea2fb7710f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUDUL BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="0" width="85" height="20" uuid="e353e981-9734-44b0-b058-97d57b46f8d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="2" width="96" height="20" uuid="cdce6a1b-9854-4060-959e-ab4ae7e15db8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL KEMBALI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="2" width="51" height="20" uuid="562339f7-d4e7-4c37-8424-47df37bc544e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="188" y="0" width="85" height="20" uuid="12e03aa3-d131-46e2-ac68-83c8098f4205"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="273" y="0" width="96" height="20" uuid="1f87be1a-b38b-46bd-b100-d8fc93ae69c1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="369" y="0" width="51" height="20" uuid="c8a2bd07-36fd-4f96-9c8e-f67ab7d65d41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="16" y="0" width="172" height="20" uuid="928390fe-aedc-4a43-a789-7b43757c4d62"/>
+			</rectangle>
+			<textField>
+				<reportElement x="16" y="0" width="172" height="20" uuid="4686abf1-cfa6-477d-a260-f06fd49b3074"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pinjaman_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="85" height="20" uuid="7764a4a6-b612-4f35-8e84-a186dfd70382"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pinjaman_tgl_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="96" height="20" uuid="c5d176d5-f1da-4ca4-af8e-66cda812b435"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pinjaman_tgl_balik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="0" width="51" height="20" uuid="374729c6-0396-4d26-ae0d-0c97c913e05f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pinjaman_jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23">
+			<textField>
+				<reportElement x="173" y="0" width="100" height="20" uuid="3c1c72e9-c3f6-49b9-9baf-e23355918189"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
