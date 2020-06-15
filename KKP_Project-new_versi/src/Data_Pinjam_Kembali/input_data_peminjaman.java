@@ -227,8 +227,8 @@ private void prosesbuku(){
 private void prosesbuku2(){
 try{
                                     String query2 = "select*from buku where id_buku = '"+txtidbk.getText()+"'";
-                                    java.sql.Connection kon2 = (Connection) koneksi.koneksi();
-                                    java.sql.Statement st = kon2.createStatement();
+                                  
+                                    java.sql.Statement st = conn.createStatement();
                                     java.sql.ResultSet data2 = st.executeQuery(query2);
 
                                     while(data2.next()){

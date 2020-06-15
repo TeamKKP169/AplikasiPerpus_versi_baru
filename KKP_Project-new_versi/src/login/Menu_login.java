@@ -6,7 +6,7 @@
 package login;
 
 
-import Data.koneksi;
+
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;

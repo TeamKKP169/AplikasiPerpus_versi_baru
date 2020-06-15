@@ -5,7 +5,7 @@
  */
 package Data;
 
-import static Data.koneksi.connect;
+
 import java.awt.BorderLayout;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;

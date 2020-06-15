@@ -5,7 +5,7 @@
  */
 package Data_Pinjam_Kembali;
 
-import static Data.koneksi.connect;
+
 import java.awt.BorderLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;

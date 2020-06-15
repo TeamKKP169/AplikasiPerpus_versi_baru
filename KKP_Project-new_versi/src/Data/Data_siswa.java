@@ -653,8 +653,8 @@ lebarkolong();
         tabmode.fireTableDataChanged();
 
         try {
-            Connection connection = koneksi.connect();
-            Statement statement = connection.createStatement();
+            
+            Statement statement = conn.createStatement();
 
             String sql = "select * from siswa where nis like '%" 
                     + tcari.getText() + "%' or nis like'%" 
