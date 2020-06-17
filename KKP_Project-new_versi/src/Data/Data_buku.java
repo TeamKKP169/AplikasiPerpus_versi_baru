@@ -62,8 +62,7 @@ public class Data_buku extends javax.swing.JFrame {
         tampilbox();
         kosong();
         lebarKolom();
-        
-        
+                 
         try{
          BufferedImage beam = ImageIO.read(getClass().getResource("SMK PERINTIS DEPOK.png"));
         setIconImage(beam);
