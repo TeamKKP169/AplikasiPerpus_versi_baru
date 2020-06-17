@@ -102,8 +102,7 @@ protected void datatabel(){
                 String data3 = hasil.getString("nama");
                 String data4 = hasil.getString("telpon");
                 String data5 = hasil.getString("tanggal");
-                String data6 = hasil.getString("jam");
-                
+                String data6 = hasil.getString("jam");                
                 String[] data={data1,data2,data3,data4,data5,data6,};
                 tabmode.addRow(data);
             }
