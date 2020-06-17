@@ -222,7 +222,7 @@ private void viewserver(){
 String server;
 
         try{
-            File file = new File("../server.log");
+            File file = new File("server.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -242,7 +242,7 @@ private void viewUser(){
 String User;
 
         try{
-            File file = new File("../user.log");
+            File file = new File("user.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -262,7 +262,7 @@ private void viewPass(){
 String pass;
 
         try{
-            File file = new File("../pass.log");
+            File file = new File("pass.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -282,7 +282,7 @@ private void viewdb(){
 String db;
 
         try{
-            File file = new File("../db.log");
+            File file = new File("db.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){

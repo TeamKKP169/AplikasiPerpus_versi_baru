@@ -41,7 +41,7 @@ private void setrver(){
         System.out.println(text);
         tserver.setText(text);
     try { 
-        Files.write(Paths.get("../server.log"), text.getBytes());
+        Files.write(Paths.get("server.log"), text.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -53,7 +53,7 @@ private void setuser(){
         System.out.println(text);
         tuser.setText(text);
     try { 
-        Files.write(Paths.get("../user.log"), text.getBytes());
+        Files.write(Paths.get("user.log"), text.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -64,7 +64,7 @@ String text = tpass.getText();
         System.out.println(text);
         tpass.setText(text);
     try { 
-        Files.write(Paths.get("../pass.log"), text.getBytes());
+        Files.write(Paths.get("pass.log"), text.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -76,7 +76,7 @@ String text = tdb.getText();
         System.out.println(text);
         tdb.setText(text);
     try { 
-        Files.write(Paths.get("../db.log"), text.getBytes());
+        Files.write(Paths.get("db.log"), text.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -95,7 +95,7 @@ private void viewserver(){
 String server;
 
         try{
-            File file = new File("../server.log");
+            File file = new File("server.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -116,7 +116,7 @@ private void viewUser(){
 String User;
 
         try{
-            File file = new File("../user.log");
+            File file = new File("user.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -137,7 +137,7 @@ private void viewdb(){
 String db;
 
         try{
-            File file = new File("../db.log");
+            File file = new File("db.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -158,7 +158,7 @@ private void viewPass(){
 String pass;
 
         try{
-            File file = new File("../pass.log");
+            File file = new File("pass.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -412,7 +412,7 @@ private void viserver(){
 String Server;
 
         try{
-            File file = new File("../server.log");
+            File file = new File("server.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -432,7 +432,7 @@ private void viuser(){
 String User;
 
         try{
-            File file = new File("../user.log");
+            File file = new File("user.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -452,7 +452,7 @@ private void vipass(){
 String pass;
 
         try{
-            File file = new File("../pass.log");
+            File file = new File("pass.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -472,7 +472,7 @@ private void db(){
 String DB;
 
         try{
-            File file = new File("../db.log");
+            File file = new File("db.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -493,7 +493,7 @@ private void Server(){
 String Server;
 
         try{
-            File file = new File("../server.log");
+            File file = new File("server.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -514,7 +514,7 @@ private void User(){
 String User;
 
         try{
-            File file = new File("../user.log");
+            File file = new File("user.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -535,7 +535,7 @@ private void DB(){
 String DB;
 
         try{
-            File file = new File("../db.log");
+            File file = new File("db.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -556,7 +556,7 @@ private void PASS(){
 String pass;
 
         try{
-            File file = new File("../pass.log");
+            File file = new File("pass.log");
             Scanner input = new Scanner(file);
 
             while(input.hasNextLine()){
@@ -846,7 +846,7 @@ String text = txtserver.getText();
         System.out.println(text);
         txtserver.setText(text);
     try { 
-        Files.write(Paths.get("../server.log"), text.getBytes());
+        Files.write(Paths.get("server.log"), text.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }       
@@ -854,7 +854,7 @@ String text = txtserver.getText();
         System.out.println(aa);
         txtuser.setText(aa);
     try { 
-        Files.write(Paths.get("../user.log"), aa.getBytes());
+        Files.write(Paths.get("user.log"), aa.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }   
@@ -862,7 +862,7 @@ String bb = txtpass.getText();
         System.out.println(bb);
         txtpass.setText(bb);
     try { 
-        Files.write(Paths.get("../pass.log"), bb.getBytes());
+        Files.write(Paths.get("pass.log"), bb.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -870,7 +870,7 @@ String bb = txtpass.getText();
         System.out.println(cc);
         txtdb.setText(cc);
     try { 
-        Files.write(Paths.get("../db.log"), cc.getBytes());
+        Files.write(Paths.get("db.log"), cc.getBytes());
     } catch (IOException ex) {
         Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
     }  
